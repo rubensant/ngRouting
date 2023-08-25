@@ -1,0 +1,32 @@
+<button mat-raised-button="secondary" (click)="getContact()">
+  Generate again
+</button>
+
+<button mat-raised-button="secondary" (click)="getNContacts(10)">
+  Obtain 10 random users
+</button>
+
+<button mat-raised-button="secondary" (click)="getContactByGender('female')">
+  Obtain only female users
+</button>
+
+<button mat-raised-button="secondary" (click)="getContactByGender('male')">
+  Obtain only male users
+</button>
+
+<app-random-user
+  *ngIf="randomContact"
+  [randomContact]="randomContact"
+  [status]="statusRequest"
+></app-random-user>
+<button *ngIf="randomContact" (click)="selectFriend()">Select</button>
+<button (click)="goToHome()">back to home</button>
+
+<div *ngIf="randomContacts">
+  <div *ngFor="let contact of randomContacts" class="container-random-contacts">
+    <app-random-user
+      [randomContact]="contact"
+      [status]="statusRequest"
+    ></app-random-user>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<h1>Your contacts</h1>
+
+<div class="users__container" *ngIf="users?.results?.length">
+  <div
+    class="user__item"
+    *ngFor="let user of users.results"
+    (click)="goToDetailContact(user)"
+  >
+    <img
+      class="user__item-avatar"
+      src="{{ user.picture.large }}"
+      alt="avatar"
+      srcset=""
+    />
+    <div class="user__item-info">
+      <span class="user__item-name">{{ user | nombreCompleto }}</span>
+      <span class="user__item-phone">{{ user.phone }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="button__next">
+  <app-paging text="Load more" (newEventClick)="nextPage()"></app-paging>
+  <app-paging text="Back to home" (newEventClick)="goToHome()"></app-paging>
+</div>

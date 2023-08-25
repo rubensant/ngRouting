@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "بنیامین",
+        "last": "سهيلي راد"
+      },
+      "location": {
+        "street": {
+          "number": 553,
+          "name": "هویزه"
+        },
+        "city": "آبادان",
+        "state": "سمنان",
+        "country": "Iran",
+        "postcode": 62240,
+        "coordinates": {
+          "latitude": "19.3492",
+          "longitude": "-132.8260"
+        },
+        "timezone": {
+          "offset": "-10:00",
+          "description": "Hawaii"
+        }
+      },
+      "email": "bnymyn.shylyrd@example.com",
+      "login": {
+        "uuid": "4510d079-7a9c-47b9-8440-42d06299957c",
+        "username": "brownbird362",
+        "password": "dana",
+        "salt": "CPKWERJt",
+        "md5": "1fa04b04fe47d6b3e560bf3b994ce670",
+        "sha1": "1e583029a23eecca50256892795290b09af95195",
+        "sha256": "15a70f6daeff6c9302ba49fcfbe4cb3183efac123473f55e440d46af3334be8c"
+      },
+      "dob": {
+        "date": "1954-10-07T03:34:38.882Z",
+        "age": 68
+      },
+      "registered": {
+        "date": "2019-08-13T20:35:26.639Z",
+        "age": 4
+      },
+      "phone": "041-56534718",
+      "cell": "0920-137-0512",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/4.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/4.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/4.jpg"
+      },
+      "nat": "IR"
+    }
+  ],
+  "info": {
+    "seed": "8c1c3227957018be",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

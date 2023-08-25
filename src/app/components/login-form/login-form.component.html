@@ -1,0 +1,51 @@
+<!-- login form -->
+<mat-card>
+  <!-- header -->
+  <mat-card-header>
+    <mat-card-title> Login </mat-card-title>
+    <mat-card-subtitle> login to your account </mat-card-subtitle>
+  </mat-card-header>
+  <!-- body -->
+  <mat-card-content>
+    <!-- form -->
+    <form [formGroup]="loginForm" (submit)="submitLogin()" class="form-login">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="Email"
+          formControlName="email"
+        />
+        <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+          the email field is required
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['email'] && email?.touched">
+          the format of email is not valid
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
+          the password field is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- submit button -->
+      <!-- Disabled if the form is invalid -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

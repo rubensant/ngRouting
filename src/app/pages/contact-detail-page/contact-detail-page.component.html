@@ -1,0 +1,25 @@
+<div class="user-detail__container" *ngIf="user;else notUser">
+  <div class="user__container">
+    <div class="user__card-image">
+      <img class="user__card-avatar" src="{{user.picture.large}}" alt="avatar" srcset="">
+    </div>
+    <div class="user__card-body">
+      <p class="user__card-name">{{user.name?.title + ' ' + user.name?.first + ' ' + user.name?.last}}</p>
+      <div class="user__card-info">
+        <p><span class="label">ID: </span> {{user.id.name || '' + user.id.value ||  ''}}</p>
+        <p><span class="label">email: </span> {{user.email}}</p>
+        <p><span class="label">phone: </span> {{user.phone}}</p>
+        <p><span class="label">cell: </span> {{user.cell}}</p>
+        <p><span class="label">gender: </span> {{user.gender}}</p>
+        <p><span class="label">age: </span> {{user.dob.age}}</p>
+        <p><span class="label">born: </span> {{user.dob.date.slice(0, 10)}}</p>
+        <p><span class="label">country: </span> {{user.location.country}}</p>
+        <p><span class="label">city: </span> {{user.location.city}}</p>
+        <p><span class="label">address: </span> {{user.location.street.name + ' ' + user.location.street.number}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #notUser>
+  <h1 >Lo sentimos, no tenemos información del contacto</h1>
+</ng-template>

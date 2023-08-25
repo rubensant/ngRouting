@@ -1,0 +1,29 @@
+<h1>Invisible Friend Game</h1>
+
+<h3>Welcome!</h3>
+
+<ng-container *ngIf="selectedFriend; else notFriend">
+  <h4>Your friend selected is {{ selectedFriend | fullName }}</h4>
+</ng-container>
+<ng-template #notFriend>
+  <h4>Select your friend</h4>
+</ng-template>
+
+<!-- <button routerLink="/contacts">Ver tus contactos</button> -->
+<button mat-raised-button color="warn" (click)="goToContacts()">
+  View all contacts
+</button>
+
+<p>Filters</p>
+<a [routerLink]="['dashboard/contacts']" [queryParams]="{ gender: 'female' }"
+  >female friend</a
+>
+<a [routerLink]="['dashboard/contacts']" [queryParams]="{ gender: 'male' }"
+  >male friend</a
+>
+<!-- <button mat-raised-button color="accent" (click)="goToContacts('female')">
+  View only female contacts
+</button>
+<button mat-raised-button color="primary" (click)="goToContacts('male')">
+  View only male contacts
+</button> -->

@@ -1,0 +1,52 @@
+<ng-container *ngIf="status === 'success' && randomContact; else notRandomUser">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img
+          [src]="randomContact.picture.thumbnail"
+          alt="thumbnail"
+          srcset=""
+        />
+      </div>
+      <mat-card-title>
+        {{ randomContact.name.title }}
+        {{ randomContact.name.first }}
+        {{ randomContact.name.last }}
+      </mat-card-title>
+      <mat-card-subtitle>{{ randomContact.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="randomContact.picture.large"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <p class="example-body-resume">
+        The Shiba Inu is the smallest of the six original and distinct spitz
+        breeds of dog from Japan. A small, agile dog that copes very well with
+        mountainous terrain, the Shiba Inu was originally bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<ng-template #notRandomUser>
+  <ng-container *ngIf="status === 'loading'; else errorTemplate">
+    <h5 id="notRandomUser">Loading...</h5>
+    <mat-progress-spinner
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="value"
+    >
+    </mat-progress-spinner>
+  </ng-container>
+
+  <ng-template #errorTemplate>
+    <h5>We are sorry, an error has ocurred</h5>
+  </ng-template>
+</ng-template>
